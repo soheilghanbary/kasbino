@@ -1,0 +1,15 @@
+.input {
+  @apply flex flex-col gap-1.5 text-sm w-full;
+}
+
+.input > label {
+  @apply text-foreground-secondary text-sm;
+}
+
+.input > input {
+  @apply bg-background-primary h-10 py-2 px-3 text-foreground-secondary rounded-md border border-line leading-6 ring-blue-primary ring-offset-background-primary duration-100 focus:ring-2 ring-offset-2;
+}
+
+.input > input {
+  @apply disabled:opacity-70;
+}

@@ -1,0 +1,15 @@
+.title {
+    @apply text-2xl leading-loose text-foreground-secondary font-bold mb-4;
+}
+
+.card {
+    @apply border rounded mb-4;
+}
+
+.cardHeader {
+    @apply rounded-t p-4 bg-background-secondary;
+
+    h2 {
+        @apply text-lg text-foreground-secondary font-medium;
+    }
+}

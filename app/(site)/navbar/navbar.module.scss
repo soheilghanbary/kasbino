@@ -1,0 +1,23 @@
+.navbar {
+  @apply flex items-center justify-between gap-4 py-4;
+}
+
+.logo {
+  @apply flex items-center gap-1.5 text-foreground-secondary;
+
+  svg {
+    @apply w-5 h-5;
+  }
+
+  h2 {
+    @apply text-base leading-8 font-bold;
+  }
+}
+
+.link {
+  @apply px-4 py-2 hover:text-foreground-secondary hover:opacity-100 text-sm duration-150 font-medium;
+}
+
+.menu {
+  @apply items-center flex-1 md:flex hidden;
+}

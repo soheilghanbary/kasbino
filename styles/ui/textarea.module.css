@@ -1,0 +1,11 @@
+.textarea {
+  @apply flex w-full flex-col gap-1.5 text-sm;
+}
+
+.textarea > label {
+  @apply text-foreground-secondary;
+}
+
+.textarea > textarea {
+  @apply rounded-md border border-line bg-background-primary px-3 py-2 leading-6 text-foreground-secondary ring-blue-primary ring-offset-2 ring-offset-background-primary duration-200 focus:ring-2;
+}

@@ -1,0 +1,15 @@
+.footer {
+  @apply container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0;
+}
+
+.description {
+  @apply flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-2 lg:px-0 text-foreground-accent;
+
+  svg {
+    @apply w-5 h-5;
+  }
+
+  p {
+    @apply text-center text-sm leading-loose md:text-left;
+  }
+}

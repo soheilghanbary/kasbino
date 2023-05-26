@@ -1,0 +1,43 @@
+.header {
+  @apply flex justify-between items-center;
+
+  h2 {
+    @apply text-xl text-foreground-secondary font-semibold;
+  }
+}
+
+.product-list {
+  @apply space-y-4;
+}
+
+.product-card {
+  @apply p-2.5 border rounded-md flex space-x-6 hover:bg-background-secondary transition relative;
+
+  img {
+    @apply w-32 h-32 rounded-md bg-background-secondary;
+  }
+}
+
+.product-details {
+  @apply flex space-y-2 justify-center flex-col;
+
+  h2 {
+    @apply text-base font-medium text-foreground-secondary;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  p > span {
+    @apply text-teal-500;
+  }
+}
+
+.actions {
+    @apply space-x-2;
+}
+
+.image-skeleton {
+  @apply w-32 h-32 rounded-md bg-background-secondary;
+}

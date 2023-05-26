@@ -1,0 +1,19 @@
+.sidebar {
+  @apply flex flex-col gap-2 sticky top-5 pr-6 w-56;
+}
+
+.item {
+  @apply flex cursor-pointer items-center gap-3 rounded-lg px-4 py-2 font-medium text-foreground-accent hover:bg-background-accent text-sm;
+}
+
+.active {
+  @apply bg-background-accent hover:bg-background-accent text-foreground-secondary;
+}
+
+.header {
+  @apply flex items-center cursor-pointer space-x-4 rounded-lg p-2;
+
+  h2 {
+    @apply text-sm font-medium text-foreground-secondary;
+  }
+}
