@@ -7,11 +7,11 @@
 }
 
 .product-list {
-  @apply space-y-4;
+  @apply lg:flex lg:flex-col md:grid md:grid-cols-2 md:gap-4;
 }
 
 .product-card {
-  @apply p-2.5 border rounded-md flex space-x-6 hover:bg-background-secondary transition relative;
+  @apply p-2.5 border rounded-md flex lg:flex-row space-y-4 flex-col lg:space-x-6 hover:bg-background-secondary transition relative;
 
   img {
     @apply w-32 h-32 rounded-md bg-background-secondary;

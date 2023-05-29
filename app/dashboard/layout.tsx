@@ -5,18 +5,26 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "~/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
 import RightSidebar from "./right-sidebar";
+import NavbarDashboard from "./navbar";
 
-export default async function DashboardLayout({ children }: { children: ReactNode }) {
+export default async function DashboardLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const session = await getServerSession(authOptions);
-  !session?.user && redirect("/login")
+  !session?.user && redirect("/login");
   return (
     <Provider>
-      <div className="flex container mx-auto py-4 gap-4">
-        <Sidebar />
-        <section className="flex-1">{children}</section>
-        {/* @ts-expect-error async component */}
-        <RightSidebar />
-      </div>
+      <main className="container mx-auto">
+        <NavbarDashboard />
+        <div className="flex gap-4">
+          <Sidebar />
+          <section className="flex-1">{children}</section>
+          {/* @ts-expect-error async component */}
+          <RightSidebar />
+        </div>
+      </main>
     </Provider>
   );
 }

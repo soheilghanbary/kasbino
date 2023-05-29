@@ -1,17 +1,21 @@
-"use client";
-import { useParams, useRouter } from "next/navigation";
+'use client'
 import { useState, useCallback } from "react";
 import Dropzone from "react-dropzone";
 import { cn } from "~/lib/utils";
 import { updateProductImage } from "../../actions";
 import { toast } from "react-hot-toast";
 import { uploadFile } from "@uploadcare/upload-client";
+import { useParams, useRouter } from "next/navigation"
 
-export default function TabUpload({ initialPath }: { initialPath: string }) {
+interface Props {
+  initialPath: string;
+}
+
+const TabUpload = ({ initialPath }: Props) => {
   const [path, setPath] = useState(initialPath);
-  const params = useParams() as { id: string };
-  const productId = params.id;
+  const { id } = useParams() as { id: string };
   const router = useRouter();
+
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     toast("Uploading...!", {
       style: {
@@ -20,6 +24,7 @@ export default function TabUpload({ initialPath }: { initialPath: string }) {
         color: "#ffffff",
       },
     });
+
     const result = await uploadFile(acceptedFiles[0], {
       publicKey: "b0e64960d0d6eda68ce8",
       store: "auto",
@@ -28,9 +33,11 @@ export default function TabUpload({ initialPath }: { initialPath: string }) {
         pet: "cat",
       },
     });
+
     const newImageURL = `https://ucarecdn.com/${result.uuid}/`;
-    await updateProductImage(newImageURL, productId);
+    await updateProductImage(newImageURL, id as string);
     setPath(newImageURL);
+
     toast.success("Image Uploaded Successfully!", {
       style: {
         backgroundColor: "var(--blue-primary)",
@@ -38,6 +45,7 @@ export default function TabUpload({ initialPath }: { initialPath: string }) {
         color: "#ffffff",
       },
     });
+
     router.refresh();
   }, []);
 
@@ -63,24 +71,29 @@ export default function TabUpload({ initialPath }: { initialPath: string }) {
       )}
     </Dropzone>
   );
+};
+
+interface PreviewImageProps {
+  path: string;
 }
 
-function PreviewImage({ path }: { path: string }) {
-  return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <img
-        alt="Current Image"
-        // layout={"fill"}
-        // objectFit="cover"
-        src={path}
-        className="rounded-md"
-      />
-    </div>
-  );
-}
+const PreviewImage = ({ path }: PreviewImageProps) => (
+  <div
+    style={{
+      position: "relative",
+      width: "100%",
+      height: "100%",
+    }}
+  >
+    <img
+      alt="Current Image"
+      // layout={"fill"}
+      // objectFit="cover"
+      src={path}
+      className="rounded-md"
+    />
+  </div>
+);
+
+
+export default TabUpload

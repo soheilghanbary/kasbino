@@ -5,7 +5,7 @@ import { prisma } from "~/lib/db";
 export default async function RightSidebar() {
   const users = await prisma.user.findMany();
   return (
-    <div className="flex flex-col gap-2 sticky top-5 pr-6 w-80">
+    <div className="flex-col gap-2 sticky top-5 pl-6 w-80 hidden lg:flex">
       <div className="rounded border">
         <div className="rounded-t p-4 bg-background-secondary border-b">
           <h2 className="text-sm text-foreground-secondary font-medium flex items-center">

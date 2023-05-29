@@ -6,7 +6,7 @@ import { cn } from "~/lib/utils";
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="rounded-full bg-background-secondary justify-center flex items-center p-1 gap-1.5">
+    <div className="rounded bg-background-secondary justify-center flex items-center p-1 gap-1.5">
       <button
         onClick={() => setTheme("dark")}
         className={cn(

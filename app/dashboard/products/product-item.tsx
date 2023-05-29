@@ -33,7 +33,7 @@ function ProductImage({ image }: ProductImageProps) {
   return (
     <>
       {image ? (
-        <img src={image} alt="Product Image" />
+        <img src={image} alt="Product Image" className={styles['product-image']} />
       ) : (
         <div className={styles["image-skeleton"]} />
       )}

@@ -1,13 +1,16 @@
 import "~/styles/globals.css";
 import { inter } from "~/assets/fonts/fonts";
+import {ReactNode} from "react";
+import {Metadata} from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kasbino",
   description: "Buy and Sell Your Products",
+  keywords: ["buy", "sell", "products"],
 };
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function RootLayout({ children }: Props) {

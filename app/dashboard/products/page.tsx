@@ -1,3 +1,4 @@
+
 import { Separator } from "~/components/ui/separator";
 import AuthProvider from "~/components/auth-provider";
 import CreateProductButton from "./create-button";
@@ -21,13 +22,17 @@ export default function ProductsPage() {
 }
 
 function Header() {
+  const headerStyles = {
+    header: styles.header,
+    separator: "my-3"
+  };
   return (
     <>
-      <div className={styles.header}>
+      <div className={headerStyles.header}>
         <h2>Products Page</h2>
         <CreateProductButton />
       </div>
-      <Separator className="my-3" />
+      <Separator className={headerStyles.separator} />
     </>
   );
 }
