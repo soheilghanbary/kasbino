@@ -1,9 +1,9 @@
 "use client";
 import { useTransition } from "react";
 import { Button } from "~/components/ui/button";
-import { deleteProduct } from "../../actions";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { deleteProduct } from "~/actions/dashboard";
 
 export default function TabSetting() {
   const params = useParams() as { id: string };

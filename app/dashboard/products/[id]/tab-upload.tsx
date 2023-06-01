@@ -2,10 +2,10 @@
 import { useState, useCallback } from "react";
 import Dropzone from "react-dropzone";
 import { cn } from "~/lib/utils";
-import { updateProductImage } from "../../actions";
 import { toast } from "react-hot-toast";
 import { uploadFile } from "@uploadcare/upload-client";
 import { useParams, useRouter } from "next/navigation"
+import { updateProductImage } from "~/actions/dashboard";
 
 interface Props {
   initialPath: string;

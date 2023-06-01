@@ -1,4 +1,3 @@
-
 import { Separator } from "~/components/ui/separator";
 import AuthProvider from "~/components/auth-provider";
 import CreateProductButton from "./create-button";

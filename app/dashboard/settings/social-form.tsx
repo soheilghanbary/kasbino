@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { Button } from "~/components/ui/button";
 import Input from "~/components/ui/input";
-import { updateSocials } from "../actions";
 import { toast } from "react-hot-toast";
+import { updateSocials } from "~/actions/dashboard";
 
 interface Props {
   website?: string | undefined;

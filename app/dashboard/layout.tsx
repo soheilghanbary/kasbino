@@ -1,30 +1,19 @@
 import { ReactNode } from "react";
-import Sidebar from "./sidebar";
-import Provider from "~/components/provider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "~/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
-import RightSidebar from "./right-sidebar";
-import NavbarDashboard from "./navbar";
+import LayoutContent from "./layout-content";
 
-export default async function DashboardLayout({
-  children,
-}: {
+type Props = {
   children: ReactNode;
-}) {
+};
+
+export default async function DashboardLayout({ children }: Props) {
   const session = await getServerSession(authOptions);
   !session?.user && redirect("/login");
   return (
-    <Provider>
-      <main className="container mx-auto">
-        <NavbarDashboard />
-        <div className="flex gap-4">
-          <Sidebar />
-          <section className="flex-1">{children}</section>
-          {/* @ts-expect-error async component */}
-          <RightSidebar />
-        </div>
-      </main>
-    </Provider>
+    <>
+      <LayoutContent>{children}</LayoutContent>
+    </>
   );
 }

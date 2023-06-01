@@ -15,6 +15,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "localhost",
       "res.cloudinary.com",
+      "ucarecdn.com"
     ],
   },
 };

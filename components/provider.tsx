@@ -9,7 +9,7 @@ export default function Provider({ children }: { children: ReactNode }) {
       <ThemeProvider attribute="class" defaultTheme="system">
         {children}
       </ThemeProvider>
-      <Toaster position="bottom-left" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false}/>
     </>
   );
 }

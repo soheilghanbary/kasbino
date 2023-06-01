@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import TabDetails from "./tab-details";
-import { getProduct } from "../../actions";
 import TabUpload from "./tab-upload";
 import TabSetting from "./tab-setting";
+import { getProduct } from "~/actions/dashboard";
 
 export default async function SingleProductPage({
   params,

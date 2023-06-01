@@ -1,10 +1,10 @@
-import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import type { Product } from "@prisma/client";
 import styles from "./products.module.scss";
 import dayjs from "dayjs";
 import revalidatetime from "dayjs/plugin/relativeTime";
 import { useMemo } from 'react'
+import Image from "next/image";
 
 dayjs.extend(revalidatetime);
 
@@ -31,13 +31,13 @@ export default function ProductItem(product: Product) {
 
 function ProductImage({ image }: ProductImageProps) {
   return (
-    <>
+    <div className="relative aspect-video md:w-32 md:h-32 w-28 h-28 rounded-md bg-background-secondary">
       {image ? (
-        <img src={image} alt="Product Image" className={styles['product-image']} />
+        <Image fill src={image} alt="Product Image" className={styles['product-image']} />
       ) : (
         <div className={styles["image-skeleton"]} />
       )}
-    </>
+    </div>
   );
 }
 
@@ -49,20 +49,6 @@ function ProductDetails({ name, price }: ProductDetailsProps) {
         <span>$</span>
         {price}
       </p>
-      <ProductActions />
-    </div>
-  );
-}
-
-function ProductActions() {
-  return (
-    <div className={styles.actions}>
-      <Button variant="outline" size="sm">
-        Views 0
-      </Button>
-      <Button variant="outline" size="sm">
-        Likes 0
-      </Button>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { getProducts } from "../actions";
 import { authOptions } from "~/pages/api/auth/[...nextauth]";
 import ProductItem from "./product-item";
 import styles from './products.module.scss'
+import { getProducts } from "~/actions/dashboard";
 
 export default async function ProductList() {
   const session = await getServerSession(authOptions);

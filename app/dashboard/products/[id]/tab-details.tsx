@@ -1,12 +1,12 @@
 "use client";
 import Input from "~/components/ui/input";
 import Textarea from "~/components/ui/textarea";
-import { DetailsProps, updateDetails } from "../../actions";
 import { Button } from "~/components/ui/button";
 import { useParams } from "next/navigation";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { DetailsProps, updateDetails } from "~/actions/dashboard";
 
 export default function TabDetails({ description, name, price }: DetailsProps) {
   const [isPending, startTransition] = useTransition();

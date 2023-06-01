@@ -3,8 +3,8 @@ import { PackagePlus } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useTransition } from "react";
 import { Button } from "~/components/ui/button";
-import { createProduct } from "../actions";
 import { redirect, usePathname } from "next/navigation";
+import { createProduct } from "~/actions/dashboard";
 
 export default function CreateProductButton() {
   const { data: session } = useSession();

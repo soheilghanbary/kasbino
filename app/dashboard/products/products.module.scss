@@ -7,19 +7,19 @@
 }
 
 .product-list {
-  @apply lg:flex lg:flex-col md:grid md:grid-cols-2 md:gap-4;
+  @apply lg:flex lg:flex-col md:grid md:grid-cols-2 md:gap-4 gap-4 grid;
 }
 
 .product-card {
-  @apply p-2.5 border rounded-md flex lg:flex-row space-y-4 flex-col lg:space-x-6 hover:bg-background-secondary transition relative;
+  @apply p-2.5 border rounded-md flex lg:flex-row flex-row space-x-4 hover:bg-background-secondary transition relative;
 
   img {
-    @apply w-32 h-32 rounded-md bg-background-secondary;
+    @apply rounded-md;
   }
 }
 
 .product-details {
-  @apply flex space-y-2 justify-center flex-col;
+  @apply flex-1 flex space-y-1 flex-col pt-2;
 
   h2 {
     @apply text-base font-medium text-foreground-secondary;
@@ -32,10 +32,6 @@
   p > span {
     @apply text-teal-500;
   }
-}
-
-.actions {
-    @apply space-x-2;
 }
 
 .image-skeleton {
