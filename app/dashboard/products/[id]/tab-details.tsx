@@ -32,7 +32,7 @@ export default function TabDetails({ description, name, price }: DetailsProps) {
   return (
     <form action={onUpdate} className="space-y-2">
       <Input defaultValue={name} name="name" type="text" label="Name" />
-      <Input defaultValue={price} name="price" type="number" label="Price" />
+      <Input defaultValue={price} name="price" type="text" label="Price" />
       <Textarea
         defaultValue={description}
         name="description"

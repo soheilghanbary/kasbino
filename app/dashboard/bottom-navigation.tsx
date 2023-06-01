@@ -11,59 +11,32 @@ import {usePathname} from "next/navigation";
 import {cn} from "~/lib/utils";
 
 export default function BottomNavigation() {
-  const pathname = usePathname();
   return (
     <div className="md:hidden fixed bottom-0 left-0 w-full grid grid-cols-5 border-t backdrop-blur-md">
-      <Link
-        href={"/dashboard"}
-        className={cn(
-          "flex justify-center items-center p-3 flex-col space-y-1",
-          pathname === "/dashboard" && "text-foreground-secondary"
-        )}
-      >
-        <LayoutDashboard className="w-5 h-5"/>
-        <span className="text-xs">Dashboard</span>
-      </Link>
-      <Link
-        href={"/dashboard/products"}
-        className={cn(
-          "flex justify-center items-center p-3 flex-col space-y-1",
-          pathname === "/dashboard/products" && "text-foreground-secondary"
-        )}
-      >
-        <FolderOpen className="w-5 h-5"/>
-        <span className="text-xs">Products</span>
-      </Link>
-      <Link
-        href={"/dashboard/search"}
-        className={cn(
-          "flex justify-center items-center p-3 flex-col space-y-1",
-          pathname === "/dashboard/search" && "text-foreground-secondary"
-        )}
-      >
-        <Search className="w-5 h-5"/>
-        <span className="text-xs">Search</span>
-      </Link>
-      <Link
-        href={"/dashboard/profile"}
-        className={cn(
-          "flex justify-center items-center p-3 flex-col space-y-1",
-          pathname === "/dashboard/profile" && "text-foreground-secondary"
-        )}
-      >
-        <HomeIcon className="w-5 h-5"/>
-        <span className="text-xs">Profile</span>
-      </Link>
-      <Link
-        href={"/dashboard/settings"}
-        className={cn(
-          "flex justify-center items-center p-3 flex-col space-y-1",
-          pathname === "/dashboard/settings" && "text-foreground-secondary"
-        )}
-      >
-        <Settings className="w-5 h-5"/>
-        <span className="text-xs">Settings</span>
-      </Link>
+      <Item icon={LayoutDashboard} href={'/dashboard'} title={'Dashboard'}/>
+      <Item icon={FolderOpen} href={"/dashboard/products"} title={'Dashboard'}/>
+      <Item icon={Search} href={'/dashboard/search'} title={'Search'}/>
+      <Item icon={HomeIcon} href={'/dashboard/profile'} title={'Search'}/>
+      <Item icon={Settings} href={'/dashboard/settings'} title={'Search'}/>
     </div>
   );
+}
+
+const Item = ({href, title, icon}: { href: string; title: string; icon: any }) => {
+  const IconElement = icon
+  const pathname = usePathname();
+  return (
+    (
+      <Link
+        href={href}
+        className={cn(
+          "flex justify-center items-center p-3 flex-col space-y-1",
+          pathname === href && "text-foreground-secondary"
+        )}
+      >
+        <IconElement className="w-5 h-5"/>
+        <span className="text-xs">{title}</span>
+      </Link>
+    )
+  )
 }

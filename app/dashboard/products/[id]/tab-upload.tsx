@@ -55,7 +55,7 @@ const TabUpload = ({ initialPath }: Props) => {
         <section
           {...getRootProps()}
           className={cn(
-            "w-full h-[360px] border-2 border-dashed rounded-md flex justify-center items-center duration-200 p-1",
+            "w-full h-auto border-2 border-dashed rounded-md flex justify-center items-center duration-200 p-1",
             isDragActive && "border-blue-primary"
           )}
         >
